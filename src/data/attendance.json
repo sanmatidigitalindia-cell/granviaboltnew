@@ -1,0 +1,38 @@
+[
+  {
+    "id": "ATT-001",
+    "guardId": "GRD-0001",
+    "date": "2024-05-13",
+    "inTime": "08:02",
+    "outTime": "17:45",
+    "location": "Andheri West, Mumbai",
+    "latitude": "19.1136",
+    "longitude": "72.8697",
+    "status": "Present",
+    "hours": "9h 43m"
+  },
+  {
+    "id": "ATT-002",
+    "guardId": "GRD-0001",
+    "date": "2024-05-12",
+    "inTime": "07:58",
+    "outTime": "18:02",
+    "location": "Andheri West, Mumbai",
+    "latitude": "19.1136",
+    "longitude": "72.8697",
+    "status": "Present",
+    "hours": "10h 04m"
+  },
+  {
+    "id": "ATT-003",
+    "guardId": "GRD-0002",
+    "date": "2024-05-13",
+    "inTime": "09:00",
+    "outTime": "18:30",
+    "location": "Koregaon Park, Pune",
+    "latitude": "18.5362",
+    "longitude": "73.8939",
+    "status": "Present",
+    "hours": "9h 30m"
+  }
+]

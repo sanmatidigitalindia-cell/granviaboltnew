@@ -1,0 +1,225 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overscroll-behavior: none;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+}
+
+/* Safe area support for notch / status bar / home indicator */
+.granvia-mobile {
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+  padding-left: env(safe-area-inset-left, 0px);
+  padding-right: env(safe-area-inset-right, 0px);
+}
+
+/* APK mode: full-screen native app, no desktop frame */
+.apk-mode .mobile-frame-wrapper {
+  width: 100vw !important;
+  height: 100vh !important;
+  height: 100dvh !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+.apk-mode .mobile-frame-wrapper .mobile-notch {
+  display: none !important;
+}
+
+.apk-mode .mobile-frame-wrapper .mobile-home-indicator {
+  display: none !important;
+}
+
+/* Desktop preview: show phone frame only on large screens */
+@media (min-width: 768px) {
+  .mobile-frame-wrapper.desktop-preview {
+    width: 390px;
+    height: 844px;
+    border-radius: 2.5rem;
+    box-shadow: 0 40px 80px rgba(0,0,0,0.4), 0 0 0 12px #1a1a1a, 0 0 0 14px #2a2a2a;
+    margin: auto;
+    position: relative;
+    overflow: hidden;
+  }
+}
+
+/* Mobile / APK: full screen */
+@media (max-width: 767px), screen and (display-mode: standalone) {
+  .mobile-frame-wrapper {
+    width: 100vw !important;
+    height: 100vh !important;
+    height: 100dvh !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+  }
+  .mobile-frame-wrapper .mobile-notch {
+    display: none !important;
+  }
+  .mobile-frame-wrapper .mobile-home-indicator {
+    display: none !important;
+  }
+}
+
+/* Bottom nav safe area */
+.mobile-bottom-nav {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+/* Touch-friendly: remove hover-only effects on mobile */
+@media (hover: none) and (pointer: coarse) {
+  .mobile-touch-interactive:hover {
+    transform: none !important;
+    box-shadow: inherit !important;
+  }
+  .mobile-touch-interactive:active {
+    transform: scale(0.97) !important;
+    opacity: 0.85;
+  }
+}
+
+/* Native scroll for Android WebView */
+.mobile-scroll {
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-y: contain;
+}
+
+/* Prevent text selection on interactive elements in mobile */
+.granvia-mobile button,
+.granvia-mobile a,
+.granvia-mobile [role="button"] {
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 3px;
+  height: 3px;
+}
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 2px;
+}
+
+@media (hover: none) {
+  ::-webkit-scrollbar { display: none; }
+  * { scrollbar-width: none; }
+}
+
+/* Number input arrows */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  font-weight: 600;
+  color: #64748b;
+}
+
+.form-input {
+  width: 100%;
+  border-radius: 0.75rem;
+  border: 1.5px solid #e2e8f0;
+  background: #f8fafc;
+  padding: 0.7rem 0.85rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: #0f1e3c;
+  outline: none;
+  transition: border-color 0.15s, background-color 0.15s, box-shadow 0.15s;
+}
+
+.form-input:focus {
+  border-color: #0f1e3c;
+  background: white;
+  box-shadow: 0 0 0 3px rgba(15, 30, 60, 0.08);
+}
+
+.table-action {
+  margin-right: 0.35rem;
+  margin-bottom: 0.35rem;
+  border-radius: 0.5rem;
+  background: #eef2f7;
+  padding: 0.35rem 0.55rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #0f1e3c;
+}
+
+.table-action.tone-green { background: #dcfce7; color: #166534; }
+.table-action.tone-red { background: #fee2e2; color: #7c2d12; }
+.table-action.tone-blue { background: #dbeafe; color: #1d4ed8; }
+.table-action.tone-amber { background: #fef9c3; color: #854d0e; }
+
+/* 3D Flip card support */
+.flip-card {
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.flip-card-inner.flipped {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flip-card-back {
+  transform: rotateY(180deg);
+}
+
+/* Prevent pull-to-refresh in WebView */
+html {
+  overflow: hidden;
+  height: 100%;
+}
+body {
+  overflow: auto;
+  height: 100%;
+}
+
+@keyframes pulse-ring {
+  0%   { transform: scale(1);   opacity: 0.6; }
+  70%  { transform: scale(2.2); opacity: 0;   }
+  100% { transform: scale(2.2); opacity: 0;   }
+}

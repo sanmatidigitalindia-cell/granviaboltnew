@@ -1,0 +1,12 @@
+{
+  "appName": "Granvia",
+  "adminEmail": "admin@granvia.com",
+  "contactPhone": "+91-9999999999",
+  "supportEmail": "support@granvia.com",
+  "coinValue": 10,
+  "commissionRate": 5,
+  "maxRadius": 50,
+  "defaultCity": "Mumbai",
+  "maintenanceMode": false,
+  "version": "1.0.0"
+}

@@ -1,0 +1,11 @@
+[
+  {
+    "id": "admin-001",
+    "email": "admin@granvia.com",
+    "password": "admin123",
+    "name": "Super Admin",
+    "role": "superadmin",
+    "avatar": null,
+    "createdAt": "2024-01-01T00:00:00Z"
+  }
+]
