@@ -115,8 +115,8 @@ function LandingPage({ onSelect }: { onSelect: (mode: AppMode) => void }) {
             whileTap={{ scale: 0.97 }}
           >
             <div className="text-3xl mb-3">📱</div>
-            <h3 className="text-white font-bold text-lg">Guard App</h3>
-            <p className="text-gray-400 text-xs mt-1">Mobile Guard Portal</p>
+            <h3 className="text-white font-bold text-lg">Service Partner App</h3>
+            <p className="text-gray-400 text-xs mt-1">Mobile Service Partner Portal</p>
             <p className="mt-3 text-xs text-gray-500">Find jobs, mark attendance & manage profile</p>
           </motion.button>
 
@@ -129,13 +129,13 @@ function LandingPage({ onSelect }: { onSelect: (mode: AppMode) => void }) {
             <div className="text-3xl mb-3">🏢</div>
             <h3 className="text-white font-bold text-lg">Employer Portal</h3>
             <p className="text-gray-400 text-xs mt-1">Company Hiring Workspace</p>
-            <p className="mt-3 text-xs text-gray-500">Post jobs, review guards & manage payments</p>
+            <p className="mt-3 text-xs text-gray-500">Post jobs, review applicants & manage payments</p>
           </motion.button>
         </div>
 
         <div className="mt-8 text-center space-y-1">
           <p className="text-gray-500 text-xs">Admin: admin@granvia.com / admin123</p>
-          <p className="text-gray-500 text-xs">Guard: rajesh@example.com / guard123</p>
+          <p className="text-gray-500 text-xs">Service Partner: rajesh@example.com / guard123</p>
         </div>
       </motion.div>
     </div>

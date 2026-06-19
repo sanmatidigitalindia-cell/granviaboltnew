@@ -26,7 +26,7 @@ export function buildOtpEmail(otp: string, recipientEmail: string): SendEmailOpt
     html: `
       <div style="font-family:Arial,sans-serif;max-width:480px;margin:0 auto;padding:32px;background:#f8fafc;border-radius:12px;">
         <div style="text-align:center;margin-bottom:24px;">
-          <h2 style="color:#0f1e3c;margin:0;">Granvia Security Platform</h2>
+          <h2 style="color:#0f1e3c;margin:0;">Granvia Platform</h2>
           <p style="color:#64748b;font-size:13px;margin:4px 0 0;">Aadhaar Verification</p>
         </div>
         <div style="background:white;border-radius:10px;padding:28px;border:1px solid #e2e8f0;">
@@ -44,7 +44,7 @@ export function buildOtpEmail(otp: string, recipientEmail: string): SendEmailOpt
           </p>
         </div>
         <p style="color:#cbd5e1;font-size:11px;text-align:center;margin-top:20px;">
-          © Granvia Security Platform · Sanmati Digital
+          © Granvia Platform · Sanmati Digital
         </p>
       </div>
     `,
@@ -59,7 +59,7 @@ export function buildWelcomeEmail(name: string, email: string, tempPassword?: st
       <div style="font-family:Arial,sans-serif;max-width:480px;margin:0 auto;padding:32px;background:#f8fafc;border-radius:12px;">
         <div style="text-align:center;margin-bottom:24px;">
           <h2 style="color:#0f1e3c;margin:0;">Welcome to Granvia</h2>
-          <p style="color:#64748b;font-size:13px;margin:4px 0 0;">Security Guard Management Platform</p>
+          <p style="color:#64748b;font-size:13px;margin:4px 0 0;">Service Partner Management Platform</p>
         </div>
         <div style="background:white;border-radius:10px;padding:28px;border:1px solid #e2e8f0;">
           <p style="color:#374151;font-size:15px;margin:0 0 16px;">Hi <strong>${name}</strong>,</p>
@@ -80,7 +80,7 @@ export function buildWelcomeEmail(name: string, email: string, tempPassword?: st
           </div>
         </div>
         <p style="color:#cbd5e1;font-size:11px;text-align:center;margin-top:20px;">
-          © Granvia Security Platform · Sanmati Digital
+          © Granvia Platform · Sanmati Digital
         </p>
       </div>
     `,

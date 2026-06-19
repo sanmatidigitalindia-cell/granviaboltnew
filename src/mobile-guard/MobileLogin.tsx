@@ -97,7 +97,7 @@ export default function MobileLogin({ onLogin, onBackToLanding }: MobileLoginPro
           transition={{ delay: 0.3 }}
         >
           <h2 className="text-2xl font-bold mb-1" style={{ color: '#0f1e3c' }}>Welcome Back</h2>
-          <p className="text-sm text-gray-400 mb-6">Sign in to your guard account</p>
+          <p className="text-sm text-gray-400 mb-6">Sign in to your service partner account</p>
 
           <AnimatePresence mode="wait">
             {success ? (

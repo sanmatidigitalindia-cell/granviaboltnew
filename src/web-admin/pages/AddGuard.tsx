@@ -224,7 +224,7 @@ export default function AddGuard({ onSuccess }: AddGuardProps) {
           <div className="sm:col-span-3">
             <div className="rounded-xl p-4 text-sm text-gray-500 flex items-start gap-2" style={{ background: '#f0f9ff', border: '1px solid #bae6fd' }}>
               <AlertCircle size={16} className="flex-shrink-0 mt-0.5 text-blue-500" />
-              Bank details and document uploads are available in the guard profile after creation.
+              Bank details and document uploads are available in the service partner profile after creation.
             </div>
           </div>
         </div>
@@ -239,8 +239,8 @@ export default function AddGuard({ onSuccess }: AddGuardProps) {
       className="p-6 w-full max-w-7xl"
     >
       <div className="mb-6">
-        <h1 className="text-2xl font-bold" style={{ color: '#0f1e3c' }}>Add New Guard</h1>
-        <p className="text-sm text-gray-500 mt-0.5">Create guard account – credentials will be usable in the mobile app</p>
+        <h1 className="text-2xl font-bold" style={{ color: '#0f1e3c' }}>Add New Service Partner</h1>
+        <p className="text-sm text-gray-500 mt-0.5">Create service partner account – credentials will be usable in the mobile app</p>
       </div>
 
       <AnimatePresence>
@@ -252,8 +252,8 @@ export default function AddGuard({ onSuccess }: AddGuardProps) {
             animate={{ scale: 1, opacity: 1 }}
           >
             <CheckCircle size={40} style={{ color: '#166534' }} />
-            <p className="font-bold text-green-800">Guard created successfully!</p>
-            <p className="text-sm text-green-600">Redirecting to guard list...</p>
+            <p className="font-bold text-green-800">Service Partner created successfully!</p>
+            <p className="text-sm text-green-600">Redirecting to service partner list...</p>
           </motion.div>
         )}
       </AnimatePresence>
@@ -300,7 +300,7 @@ export default function AddGuard({ onSuccess }: AddGuardProps) {
                   transition={{ duration: 0.8, repeat: Infinity, ease: 'linear' }}
                 />
               ) : (
-                'Create Guard Account'
+                'Create Service Partner Account'
               )}
             </motion.button>
             <motion.button

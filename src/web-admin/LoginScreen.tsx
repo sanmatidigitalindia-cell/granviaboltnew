@@ -168,11 +168,11 @@ export default function LoginScreen({ onLogin, onBackToLanding }: LoginScreenPro
           <div>
             <h2 className="text-3xl font-bold text-gray-900 leading-tight">
               India's Premier<br />
-              <span style={{ color: '#8b1a1a' }}>Security Manpower</span><br />
+              <span style={{ color: '#8b1a1a' }}>Service Partner</span><br />
               Management Platform
             </h2>
             <p className="mt-3 text-gray-500 text-sm leading-relaxed">
-              Deploy, monitor, and manage your entire security workforce from one unified admin center.
+              Deploy, monitor, and manage your entire service partner workforce from one unified admin center.
             </p>
           </div>
 
@@ -387,7 +387,7 @@ export default function LoginScreen({ onLogin, onBackToLanding }: LoginScreenPro
             </motion.div>
 
             <p className="text-center text-xs text-gray-400 mt-4">
-              © 2024 Granvia Security Solutions. All rights reserved.
+              © 2024 Granvia Solutions. All rights reserved.
             </p>
             <button
               type="button"

@@ -37,10 +37,10 @@ interface NavItem {
 const navItems: NavItem[] = [
   { id: 'dashboard', label: 'Dashboard', icon: <LayoutDashboard size={18} /> },
   {
-    id: 'guards', label: 'Guard Management', icon: <Shield size={18} />,
+    id: 'guards', label: 'Service Partner Management', icon: <Shield size={18} />,
     children: [
-      { id: 'guards', label: 'Guard List' },
-      { id: 'add-guard', label: 'Add Guard' },
+      { id: 'guards', label: 'Service Partner List' },
+      { id: 'add-guard', label: 'Add Service Partner' },
     ],
   },
   { id: 'employers', label: 'Employer Management', icon: <Building2 size={18} /> },

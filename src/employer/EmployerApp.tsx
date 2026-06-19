@@ -1229,7 +1229,7 @@ function JobFormPage({ employer: _employer, company, onSaved }: { employer: Empl
   const [sites, setSites] = useState<any[]>([]);
   const [saving, setSaving] = useState(false);
   const [job, setJob] = useState({
-    title: '', site_id: '', guards_required: '1', category: 'Security Guard', guard_type: 'Guard',
+    title: '', site_id: '', guards_required: '1', category: 'Service Partner', guard_type: 'Service Partner',
     gender_preference: 'Any', experience_required: '0-1 years', salary_amount: '', payment_type: 'Monthly',
     duty_hours: '8 hours', shift_type: 'Day', start_date: '', end_date: '', duration_type: 'Monthly',
     required_skills: 'Security,Patrolling', language_requirements: 'Hindi,English',
@@ -1292,7 +1292,7 @@ function JobFormPage({ employer: _employer, company, onSaved }: { employer: Empl
           <Sel label="Site / Location" value={job.site_id} options={sites.map(s => s.id)} labels={Object.fromEntries(sites.map(s => [s.id, s.site_name]))} onChange={v => setJob({ ...job, site_id: v })} />
           <Input label="Guards Required" value={job.guards_required} onChange={v => setJob({ ...job, guards_required: v })} />
           <Input label="Category" value={job.category} onChange={v => setJob({ ...job, category: v })} />
-          <Input label="Guard Type" value={job.guard_type} onChange={v => setJob({ ...job, guard_type: v })} />
+          <Input label="Service Partner Type" value={job.guard_type} onChange={v => setJob({ ...job, guard_type: v })} />
           <Sel label="Gender Preference" value={job.gender_preference} options={['Any', 'Male', 'Female']} onChange={v => setJob({ ...job, gender_preference: v })} />
           <Input label="Experience" value={job.experience_required} onChange={v => setJob({ ...job, experience_required: v })} />
           <Input label="Salary / Payment" value={job.salary_amount} onChange={v => setJob({ ...job, salary_amount: v })} />
@@ -1609,10 +1609,10 @@ function ApplicantsPage({ employer: _employer, company, filter, onChanged }: { e
     <div className="p-6">
       <Card className="p-5">
         <h2 className="text-xl font-bold text-gray-900 mb-4">Applicants</h2>
-        <DataTable headers={['Guard', 'Job', 'Experience', 'Verification', 'Status', 'Actions']}>
+        <DataTable headers={['Service Partner', 'Job', 'Experience', 'Verification', 'Status', 'Actions']}>
           {apps.map((app: any) => (
             <tr key={app.id} className="border-b border-gray-50">
-              <Td><b>{app.guard_profiles?.full_name ?? 'Guard'}</b><div className="text-xs text-gray-400">{app.guard_profiles?.city} · {app.guard_profiles?.mobile}</div></Td>
+              <Td><b>{app.guard_profiles?.full_name ?? 'Service Partner'}</b><div className="text-xs text-gray-400">{app.guard_profiles?.city} · {app.guard_profiles?.mobile}</div></Td>
               <Td>{app.job_posts?.title}</Td>
               <Td>{app.guard_profiles?.skills?.join(', ') ?? '--'}</Td>
               <Td><div className="text-xs">Status: {app.guard_profiles?.verification_status ?? '--'}</div></Td>
@@ -1652,10 +1652,10 @@ function InterviewsPage({ employer: _employer, company, onChanged }: { employer:
     <div className="p-6">
       <Card className="p-5">
         <h2 className="font-bold text-gray-900 mb-4">Call / Interview Requests</h2>
-        <DataTable headers={['Guard', 'Job', 'Type', 'Preferred', 'Message', 'Status', 'Actions']}>
+        <DataTable headers={['Service Partner', 'Job', 'Type', 'Preferred', 'Message', 'Status', 'Actions']}>
           {requests.map((r: any) => (
             <tr key={r.id} className="border-b border-gray-50">
-              <Td>{r.guard_profiles?.full_name ?? 'Guard'}<div className="text-xs text-gray-400">{r.guard_profiles?.mobile}</div></Td>
+              <Td>{r.guard_profiles?.full_name ?? 'Service Partner'}<div className="text-xs text-gray-400">{r.guard_profiles?.mobile}</div></Td>
               <Td>{r.job_posts?.title}</Td>
               <Td>{r.request_type}</Td>
               <Td>{r.preferred_date} {r.preferred_time}</Td>
@@ -1718,10 +1718,10 @@ function AgreementsPage({ employer: _employer, company, onChanged }: { employer:
     <div className="p-6 space-y-5">
       <Card className="p-5">
         <h2 className="font-bold text-gray-900 mb-4">Job Offers</h2>
-        <DataTable headers={['Guard', 'Job', 'Salary', 'Shift', 'Status', 'Actions']}>
+        <DataTable headers={['Service Partner', 'Job', 'Salary', 'Shift', 'Status', 'Actions']}>
           {offers.map((offer: any) => (
             <tr key={offer.id} className="border-b border-gray-50">
-              <Td>{offer.guard_profiles?.full_name ?? 'Guard'}</Td>
+              <Td>{offer.guard_profiles?.full_name ?? 'Service Partner'}</Td>
               <Td>{offer.job_posts?.title}</Td>
               <Td>Rs {offer.offered_salary}</Td>
               <Td>{offer.shift_type}</Td>
@@ -1737,10 +1737,10 @@ function AgreementsPage({ employer: _employer, company, onChanged }: { employer:
       </Card>
       <Card className="p-5">
         <h2 className="font-bold text-gray-900 mb-4">Agreements / Onboarding</h2>
-        <DataTable headers={['Guard', 'Job', 'Terms', 'Status', 'Actions']}>
+        <DataTable headers={['Service Partner', 'Job', 'Terms', 'Status', 'Actions']}>
           {agreements.map((ag: any) => (
             <tr key={ag.id} className="border-b border-gray-50">
-              <Td>{ag.guard_profiles?.full_name ?? 'Guard'}</Td>
+              <Td>{ag.guard_profiles?.full_name ?? 'Service Partner'}</Td>
               <Td>{ag.job_posts?.title}</Td>
               <Td>{(ag.terms as any)?.summary ?? '--'}</Td>
               <Td>{statusBadge(ag.status)}</Td>
@@ -1775,10 +1775,10 @@ function AttendancePage({ company, onChanged }: { company: any; onChanged: () =>
     <div className="p-6">
       <Card className="p-5">
         <h2 className="font-bold text-gray-900 mb-4">Attendance Verification</h2>
-        <DataTable headers={['Guard', 'Job', 'Date', 'In / Out', 'Hours', 'Status', 'Actions']}>
+        <DataTable headers={['Service Partner', 'Job', 'Date', 'In / Out', 'Hours', 'Status', 'Actions']}>
           {records.map((r: any) => (
             <tr key={r.id} className="border-b border-gray-50">
-              <Td>{r.guard_profiles?.full_name ?? 'Guard'}</Td>
+              <Td>{r.guard_profiles?.full_name ?? 'Service Partner'}</Td>
               <Td>{r.job_posts?.title}</Td>
               <Td>{r.attendance_date}</Td>
               <Td>{r.in_time ? new Date(r.in_time).toLocaleTimeString('en-IN', { hour: '2-digit', minute: '2-digit' }) : '--'} / {r.out_time ? new Date(r.out_time).toLocaleTimeString('en-IN', { hour: '2-digit', minute: '2-digit' }) : '--'}</Td>
@@ -1814,7 +1814,7 @@ function PaymentsPage({ employer: _employer, company }: { employer: EmployerInfo
 
   const handlePay = (appId: string, guardName: string) => {
     setPaid(prev => new Set([...prev, appId]));
-    setSuccessMsg(`Payment done for ${guardName}. Guard will be notified.`);
+    setSuccessMsg(`Payment done for ${guardName}. Service Partner will be notified.`);
   };
 
   return (
@@ -1822,29 +1822,29 @@ function PaymentsPage({ employer: _employer, company }: { employer: EmployerInfo
       {successMsg && <SuccessBanner message={successMsg} onClose={() => setSuccessMsg('')} />}
       <Card className="p-5">
         <h2 className="font-bold text-gray-900 mb-4">Process Payments</h2>
-        <DataTable headers={['Guard', 'Job', 'Amount', 'Action']}>
+        <DataTable headers={['Service Partner', 'Job', 'Amount', 'Action']}>
           {apps.map((app: any) => {
             const alreadyPaid = paid.has(app.id);
             return (
               <tr key={app.id} className="border-b border-gray-50">
-                <Td>{app.guard_profiles?.full_name ?? 'Guard'}</Td>
+                <Td>{app.guard_profiles?.full_name ?? 'Service Partner'}</Td>
                 <Td>{app.job_posts?.title}</Td>
                 <Td>Rs {app.job_posts?.salary_amount ?? '--'}</Td>
                 <Td>
                   {alreadyPaid
                     ? <span className="text-xs font-semibold text-green-700 bg-green-50 px-3 py-1 rounded-full">Payment Done</span>
-                    : <button onClick={() => handlePay(app.id, app.guard_profiles?.full_name ?? 'Guard')} className="table-action tone-green">Pay Now</button>}
+                    : <button onClick={() => handlePay(app.id, app.guard_profiles?.full_name ?? 'Service Partner')} className="table-action tone-green">Pay Now</button>}
                 </Td>
               </tr>
             );
           })}
         </DataTable>
-        {apps.length === 0 && <EmptyState text="No selected guards awaiting payment" />}
+        {apps.length === 0 && <EmptyState text="No selected service partners awaiting payment" />}
       </Card>
 
       <Card className="p-5">
         <h2 className="font-bold text-gray-900 mb-4">Payment History</h2>
-        <DataTable headers={['Guard', 'Job', 'Amount', 'Method', 'Status']}>
+        <DataTable headers={['Service Partner', 'Job', 'Amount', 'Method', 'Status']}>
           {payments.map((p: any) => (
             <tr key={p.id} className="border-b border-gray-50">
               <Td>{p.guard_profiles?.full_name ?? '--'}</Td>

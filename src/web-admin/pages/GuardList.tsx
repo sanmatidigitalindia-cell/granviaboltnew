@@ -47,8 +47,8 @@ export default function GuardList({ onAddGuard }: GuardListProps) {
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <h1 className="text-2xl font-bold" style={{ color: '#0f1e3c' }}>Guard Management</h1>
-          <p className="text-sm text-gray-500 mt-0.5">{guards.length} total guards registered</p>
+          <h1 className="text-2xl font-bold" style={{ color: '#0f1e3c' }}>Service Partner Management</h1>
+          <p className="text-sm text-gray-500 mt-0.5">{guards.length} total service partners registered</p>
         </div>
         <motion.button
           onClick={onAddGuard}
@@ -58,7 +58,7 @@ export default function GuardList({ onAddGuard }: GuardListProps) {
           whileTap={{ scale: 0.97 }}
         >
           <Plus size={16} />
-          Add Guard
+          Add Service Partner
         </motion.button>
       </div>
 
@@ -99,7 +99,7 @@ export default function GuardList({ onAddGuard }: GuardListProps) {
           <table className="w-full">
             <thead>
               <tr style={{ background: '#f8fafc', borderBottom: '1px solid #e2e8f0' }}>
-                {['Guard ID', 'Name', 'Contact', 'Location', 'Skills', 'Verifications', 'Status', 'Actions'].map(h => (
+                {['Partner ID', 'Name', 'Contact', 'Location', 'Skills', 'Verifications', 'Status', 'Actions'].map(h => (
                   <th key={h} className="text-left px-4 py-3 text-xs font-semibold text-gray-500 uppercase tracking-wide whitespace-nowrap">
                     {h}
                   </th>
@@ -319,7 +319,7 @@ export default function GuardList({ onAddGuard }: GuardListProps) {
                     color: selectedGuard.status === 'Active' ? '#7c2d12' : '#166534',
                   }}
                 >
-                  {selectedGuard.status === 'Active' ? 'Block Guard' : 'Unblock Guard'}
+                  {selectedGuard.status === 'Active' ? 'Block Service Partner' : 'Unblock Service Partner'}
                 </button>
                 <button
                   onClick={() => setSelectedGuard(null)}

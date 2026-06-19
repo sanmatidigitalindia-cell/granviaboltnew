@@ -17,8 +17,8 @@ interface AdminAppProps {
 
 const PAGE_TITLES: Record<AdminPage, string> = {
   dashboard: 'Dashboard',
-  guards: 'Guard Management',
-  'add-guard': 'Add New Guard',
+  guards: 'Service Partner Management',
+  'add-guard': 'Add New Service Partner',
   employers: 'Employer Management',
   jobs: 'Job Management',
   attendance: 'Attendance',

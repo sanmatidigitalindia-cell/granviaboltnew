@@ -190,7 +190,7 @@ export default function MobileDashboard({ guard, onNavigate }: MobileDashboardPr
             back={(
               <div className="h-full px-4 flex items-center justify-between text-white">
                 <div>
-                  <p className="text-xs text-blue-200">Guard ID</p>
+                  <p className="text-xs text-blue-200">Partner ID</p>
                   <p className="text-sm font-bold">{guard.id}</p>
                 </div>
                 <div className="text-right min-w-0">

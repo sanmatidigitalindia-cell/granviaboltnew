@@ -58,10 +58,10 @@ export default function Dashboard() {
   ];
 
   const recentActivity = [
-    { type: 'guard', text: 'New guard Rajesh Kumar registered', time: '2 min ago', icon: <UserCheck size={14} />, color: '#166534' },
-    { type: 'job', text: 'Job posted: Security Guard – Reliance Mall', time: '15 min ago', icon: <Briefcase size={14} />, color: '#7c2d12' },
-    { type: 'attendance', text: 'Attendance marked: 8 guards checked in', time: '1 hr ago', icon: <Clock size={14} />, color: '#1e3a5f' },
-    { type: 'alert', text: 'Document verification pending: 3 guards', time: '2 hr ago', icon: <AlertCircle size={14} />, color: '#854d0e' },
+    { type: 'guard', text: 'New service partner Rajesh Kumar registered', time: '2 min ago', icon: <UserCheck size={14} />, color: '#166534' },
+    { type: 'job', text: 'Job posted: Service Partner – Reliance Mall', time: '15 min ago', icon: <Briefcase size={14} />, color: '#7c2d12' },
+    { type: 'attendance', text: 'Attendance marked: 8 service partners checked in', time: '1 hr ago', icon: <Clock size={14} />, color: '#1e3a5f' },
+    { type: 'alert', text: 'Document verification pending: 3 service partners', time: '2 hr ago', icon: <AlertCircle size={14} />, color: '#854d0e' },
     { type: 'application', text: 'New application: Suresh Patil → Tech Park', time: '3 hr ago', icon: <FileText size={14} />, color: '#5b21b6' },
   ];
 
@@ -215,7 +215,7 @@ export default function Dashboard() {
         <div className="flex items-center justify-between mb-4">
           <h2 className="font-bold text-gray-900 flex items-center gap-2">
             <MapPin size={16} style={{ color: '#8b1a1a' }} />
-            Guard & Site Map
+            Service Partner & Site Map
           </h2>
           <div className="flex gap-3 text-xs text-gray-400">
             <span className="flex items-center gap-1"><span className="w-2.5 h-2.5 rounded-full bg-green-600 inline-block" /> Guards</span>
@@ -251,7 +251,7 @@ export default function Dashboard() {
         <div className="flex items-center justify-between mb-4">
           <h2 className="font-bold text-white flex items-center gap-2">
             <Shield size={16} style={{ color: '#8b1a1a' }} />
-            Guard Status Overview
+            Service Partner Status Overview
           </h2>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
